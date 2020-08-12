@@ -1,0 +1,40 @@
+.game-container {
+  width: 100%;
+  height: calc(100vh - 50px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.field {
+  width: 400px;
+  height: 400px;
+  background-color: #61dafb;
+  border: 15px solid #000000;
+  display: flex;
+  flex-wrap: wrap;
+  //display: block;
+
+  //position: relative;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #61dafb;
+  background-color: #282c34;
+  color: #61dafb;
+  font-size: 48px;
+  font-style: italic;
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  //position: absolute;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
