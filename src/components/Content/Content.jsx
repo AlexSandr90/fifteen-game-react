@@ -4,28 +4,41 @@ import './Content.scss';
 
 const Content = () => {
 
-    const randomNumbers = [...Array(16).keys()].sort(() => Math.random() - 0.5);
+    const numbers = [...Array(16).keys()];
+    const randomNumbers = [...numbers];
+    randomNumbers.sort(() => Math.random() - 0.5);
 
-    const cell = randomNumbers.map(item => {
+    console.log(numbers);
+    console.log(randomNumbers);
+
+    const cell = numbers.map(item => {
 
         let positions = [...randomNumbers];
         // console.log(positions);
         const move = (e) => {
-            let zeroElement;
             let temp;
+            let targetOrder = randomNumbers.indexOf(item);
+            let targetIndex = item;
 
+            [targetIndex, zeroIndex] = [zeroIndex, targetIndex];
+            [targetOrder, zeroOrder] = [zeroOrder, targetOrder];
 
-            return zeroElement;
+            console.log('targetOrder: ' ,targetOrder, 'targetIndex: ', targetIndex);
         };
 
-        console.log(move());
+        // console.log(move());
         const cellInlineStyle = {order: randomNumbers.indexOf(item)};
         if (randomNumbers[item] === 0) {
-            return <div className='cell-zero' key={randomNumbers[item] + 1} style={cellInlineStyle}/>
+            var zeroOrder = randomNumbers.indexOf(item);
+            var zeroIndex = item;
+
+            console.log('zeroElement: ', zeroOrder, 'zeroIndex: ', zeroIndex);
+            return <div className='cell-zero' key={randomNumbers[item] } style={cellInlineStyle}/>
         }
 
+
         return (
-            <div onClick={move} className='cell' key={randomNumbers[item] + 1} style={cellInlineStyle}>
+            <div onClick={move} className='cell' key={randomNumbers[item] } style={cellInlineStyle}>
                 {randomNumbers[item]}
             </div>
         )
