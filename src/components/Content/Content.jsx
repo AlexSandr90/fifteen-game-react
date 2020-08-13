@@ -5,13 +5,28 @@ import './Content.scss';
 const Content = () => {
 
     const randomNumbers = [...Array(16).keys()].sort(() => Math.random() - 0.5);
-    console.log(randomNumbers);
 
     const cell = randomNumbers.map(item => {
+
+        let positions = [...randomNumbers];
+        // console.log(positions);
+        const move = (e) => {
+            let zeroElement;
+            let temp;
+
+
+            return zeroElement;
+        };
+
+        console.log(move());
         const cellInlineStyle = {order: randomNumbers.indexOf(item)};
+        if (randomNumbers[item] === 0) {
+            return <div className='cell-zero' key={randomNumbers[item] + 1} style={cellInlineStyle}/>
+        }
+
         return (
-            <div className='cell' key={randomNumbers[item] + 1} style={cellInlineStyle}>
-                {randomNumbers[item] + 1}
+            <div onClick={move} className='cell' key={randomNumbers[item] + 1} style={cellInlineStyle}>
+                {randomNumbers[item]}
             </div>
         )
     });
@@ -25,13 +40,5 @@ const Content = () => {
         </section>
     )
 };
-
-// const Ceil = props => {
-//     return (
-//         <div key={props}>
-//
-//         </div>
-//     )
-// }
 
 export default Content;
