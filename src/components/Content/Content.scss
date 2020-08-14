@@ -9,18 +9,22 @@
 }
 
 .field {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
   width: 400px;
   height: 400px;
   background-color: #61dafb;
   border: 10px solid #000000;
-  display: flex;
-  flex-wrap: wrap;
   border-radius: 5px;
-  //position: relative;
 }
 
 .cell,
 .cell-zero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100px;
   height: 100px;
   border: 1px solid #61dafb;
@@ -30,11 +34,6 @@
   cursor: pointer;
   transition: all .3s;
   box-sizing: border-box;
-
-  //position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .cell {

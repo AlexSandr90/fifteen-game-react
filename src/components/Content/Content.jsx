@@ -8,37 +8,35 @@ const Content = () => {
     const randomNumbers = [...numbers];
     randomNumbers.sort(() => Math.random() - 0.5);
 
-    console.log(numbers);
-    console.log(randomNumbers);
+    console.log('numbers: ', numbers);
+    console.log('randomNumbers: ', randomNumbers);
 
     const cell = numbers.map(item => {
 
         let positions = [...randomNumbers];
-        // console.log(positions);
-        const move = (e) => {
-            let temp;
+        const move = () => {
             let targetOrder = randomNumbers.indexOf(item);
             let targetIndex = item;
 
             [targetIndex, zeroIndex] = [zeroIndex, targetIndex];
             [targetOrder, zeroOrder] = [zeroOrder, targetOrder];
-
-            console.log('targetOrder: ' ,targetOrder, 'targetIndex: ', targetIndex);
+            console.log('zeroOrder: ', zeroOrder, 'zeroIndex: ', zeroIndex, 'zeroElement: ', zeroElement);
+            console.log('targetOrder: ' ,targetOrder, 'targetIndex: ', targetIndex, 'targetElement: ', randomNumbers[item]);
         };
 
-        // console.log(move());
         const cellInlineStyle = {order: randomNumbers.indexOf(item)};
         if (randomNumbers[item] === 0) {
             var zeroOrder = randomNumbers.indexOf(item);
             var zeroIndex = item;
+            var zeroElement = randomNumbers[item];
 
-            console.log('zeroElement: ', zeroOrder, 'zeroIndex: ', zeroIndex);
-            return <div className='cell-zero' key={randomNumbers[item] } style={cellInlineStyle}/>
+            console.log('zeroOrder: ', zeroOrder, 'zeroIndex: ', zeroIndex);
+            return <div onClick={move} className='cell-zero' key={randomNumbers[item] } style={cellInlineStyle}/>
         }
 
 
         return (
-            <div onClick={move} className='cell' key={randomNumbers[item] } style={cellInlineStyle}>
+            <div onClick={move()} className='cell' key={randomNumbers[item] } style={cellInlineStyle}>
                 {randomNumbers[item]}
             </div>
         )
