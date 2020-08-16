@@ -12,7 +12,8 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: stretch;
   width: 400px;
   height: 400px;
   background-color: #61dafb;
