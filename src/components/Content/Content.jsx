@@ -53,11 +53,11 @@ export default class Content extends Component {
                 let zeroElement = randomNumbers[item];
 
                 console.log('zeroOrder: ', zeroOrder, 'zeroIndex: ', zeroIndex, 'zeroElement: ', zeroElement);
-                return <div onClick={move} className='cell-zero' key={randomNumbers.indexOf(item)} style={cellInlineStyle}/>
+                return <div onClick={() => move()} className='cell-zero' key={randomNumbers.indexOf(item)} style={cellInlineStyle}/>
             }
 
             return (
-                <div onClick={move} className='cell' key={randomNumbers.indexOf(item) } style={cellInlineStyle}>
+                <div onClick={() => move()} className='cell' key={randomNumbers.indexOf(item) } style={cellInlineStyle}>
                     {randomNumbers[item] }
                 </div>
             )
